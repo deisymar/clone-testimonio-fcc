@@ -2,21 +2,22 @@ import "../Testimonio.css";
 import React from "react";
 
 function Testimonio(props) {
+  let { nombre, pais, imagen, cargo, empresa, testimonio } = props;
   return (
     <div className="contenedor-testimonio">
       <img
         className="imagen-testimonio"
-        src={`../imagenes/testimonio-${props.imagen}.png`}
-        alt="Foto de perfil"
+        src={`../imagenes/testimonio-${imagen}.png`}
+        alt={`Foto de ${imagen}`}
       />
       <div className="contenedor-text-textimonio">
         <p className="nombre-testimonio">
-          <strong>{props.nombre}</strong> en {props.pais}
+          <strong>{nombre}</strong> en {pais}
         </p>
         <p className="cargo-testimonio">
-          {props.cargo} en <strong>{props.empresa}</strong>
+          {cargo} en <strong>{empresa}</strong>
         </p>
-        <p className="text-testimonio">"{props.testimonio}"</p>
+        <p className="text-testimonio">"{testimonio}"</p>
       </div>
     </div>
   );
